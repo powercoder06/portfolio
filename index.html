@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Kumar - Full Stack Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #1a202c, #2d3748);
+            /* Dark gradient background */
+            color: #e2e8f0;
+            /* Light text for dark mode */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll due to animations */
+        }
+
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+            color: #f8fafc;
+            /* Lighter heading color for dark mode */
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: var(--underline-width, 0%);
+            height: 4px;
+            background-color: #6366f1;
+            border-radius: 9999px;
+            transform-origin: left;
+        }
+
+        .card {
+            background-color: #2d3748;
+            /* Darker card background */
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+            /* Deeper shadow for dark mode */
+            padding: 32px;
+            margin-bottom: 32px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #4a5568;
+            /* Subtle border for dark mode */
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-item {
+            background-color: #4338ca;
+            /* Darker indigo for skill items */
+            color: #e0e7ff;
+            /* Lighter text for skill items */
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 6px;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .skill-item:hover {
+            background-color: #3730a3;
+            /* Darker on hover */
+        }
+
+        .nav-link {
+            transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            position: relative;
+            font-weight: 500;
+            color: #cbd5e0;
+            /* Light gray for nav links */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: #6366f1;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #818cf8;
+            /* Lighter indigo on hover */
+            transform: translateY(-2px);
+        }
+
+        .sticky-header {
+            background-color: #1a202c;
+            /* Darker header background */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .bg-dots-pattern {
+            background-image: radial-gradient(#6366f1 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-item {
+                position: relative;
+                left: 0;
+                width: calc(50% - 24px);
+            }
+
+            .timeline-item:nth-child(even) {
+                left: calc(50% + 24px);
+            }
+
+            .timeline-item .timeline-dot {
+                position: absolute;
+                top: 2rem;
+                left: calc(100% + 12px);
+                transform: none;
+            }
+
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: -48px;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <header class="bg-gray-900 shadow-lg py-4 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
+        id="main-header">
+        <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-white logo-text">Ayush Kumar</h1>
+            <ul class="flex space-x-6 sm:space-x-8">
+                <li><a href="#summary"
+                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Summary</a>
+                </li>
+                <li><a href="#experience"
+                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Experience</a>
+                </li>
+                <li><a href="#projects"
+                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Projects</a>
+                </li>
+                <li><a href="#skills"
+                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Skills</a>
+                </li>
+                <li><a href="#education"
+                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Education</a>
+                </li>
+                <li><a href="#contact"
+                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 mt-20">
+        <section id="summary" class="bg-gray-800 py-16 sm:py-24 text-center relative overflow-hidden">
+            <div class="container mx-auto px-4 md:px-8 lg:flex lg:items-center lg:text-left lg:gap-12">
+                <div class="lg:w-1/2 mt-12 md:mt-16 lg:mt-0 flex justify-center">
+                    <div class="rounded-3xl shadow-xl relative overflow-hidden hero-image-container max-w-sm w-full">
+                        <img src="hero-image.png" alt="Ayush Kumar Profile"
+                            class="relative w-full h-auto object-cover rounded-2xl transform hover:scale-105 transition-transform duration-500"
+                            style="aspect-ratio: 3 / 4;" />
+                        <div class="absolute inset-0 bg-indigo-500 bg-opacity-20 rounded-2xl mix-blend-multiply"></div>
+                        <div
+                            class="absolute z-10 bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-gray-900 to-transparent text-white rounded-b-2xl">
+                            <h4 class="text-xl font-semibold mb-1">Based in Jamshedpur, India</h4>
+                            <p class="text-sm opacity-75">Passionate Full Stack Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight hero-title"></h2>
+                    <p class="text-xl lg:text-2xl font-medium text-indigo-400 mb-4 hero-subtitle">Full Stack Software
+                        Engineer</p>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8 hero-description">
+                        With 4 months of experience, I specialize in developing scalable applications using Angular,
+                        Spring
+                        Boot, Python, and SQL. I am proficient in both front-end and back-end technologies, adept at
+                        working in
+                        Agile environments, building RESTful APIs, containerization, and supporting the full SDLC. My
+                        strengths
+                        include strong analytical skills, problem-solving, debugging, and a commitment to continuous
+                        learning.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4 hero-buttons">
+                        <a href="mailto:akumar06082001@gmail.com"
+                            class="inline-flex items-center justify-center bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:-translate-y-1">
+                            Email Me
+                        </a>
+                        <a href="https://linkedin.com/in/ayush-kumar-72a258220" target="_blank"
+                            class="inline-flex items-center justify-center bg-white text-gray-800 border border-gray-300 px-8 py-3 rounded-xl font-semibold shadow-md hover:bg-gray-100 transition duration-300 transform hover:-translate-y-1">
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h3 class="text-4xl font-bold text-gray-100 mb-10 section-heading text-center">Experience</h3>
+                <div class="card experience-card bg-gray-700 p-8 rounded-2xl shadow-xl border border-gray-600">
+                    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
+                        <div class="md:col-span-1 lg:col-span-1 text-center md:text-left">
+                            <p class="text-lg font-bold text-indigo-400">DBS Tech India</p>
+                            <p class="text-md text-gray-300 font-medium">Hyderabad, India</p>
+                            <p class="text-md text-gray-300">June 2024 – June 2025</p>
+                        </div>
+
+                        <div class="md:col-span-2 lg:col-span-3">
+                            <h4 class="text-2xl font-bold text-white mb-4 border-b pb-4 border-gray-600">Software
+                                Development Intern</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-3 pl-4">
+                                <li class="font-normal leading-relaxed">Collaborated with cross-functional and product
+                                    management teams to deliver enterprise-grade web applications frontend using
+                                    AngularJS.</li>
+                                <li class="font-normal leading-relaxed">Created reusable front-end components for
+                                    scalable microservices aligned to software architecture scope.</li>
+                                <li class="font-normal leading-relaxed">Automated SQL procedures and implemented logging
+                                    mechanisms to enhance traceability, data flow, and system performance.</li>
+                                <li class="font-normal leading-relaxed">Participated in debugging, root cause analysis,
+                                    and supporting software releases.</li>
+                                <li class="font-normal leading-relaxed">Participated in application monitoring, issue
+                                    resolution, status reporting, and version control using Git and JIRA.</li>
+                                <li class="font-normal leading-relaxed">Gained familiarity with Banking workflows and
+                                    data handling aligned to enterprise processes and operating systems.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h3 class="text-4xl font-bold text-gray-100 mb-10 section-heading text-center">Key Projects</h3>
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div
+                        class="card project-card bg-gray-700 p-8 rounded-2xl shadow-xl border border-gray-600 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
+                        <h4 class="text-2xl font-bold text-white mb-2">SQL Executor Tool</h4>
+                        <p class="text-md text-gray-300 mb-4 font-medium">May 2025 – June 2025</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Angular</span>
+                            <span
+                                class="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Flask</span>
+                            <span
+                                class="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full">SQL</span>
+                        </div>
+
+                        <ul class="list-disc list-inside text-gray-300 space-y-3">
+                            <li class="font-normal leading-relaxed">Developed a full-stack solution in Angular and Flask
+                                to automate and validate SQL scripts, improving data processing and report accuracy.
+                            </li>
+                            <li class="font-normal leading-relaxed">Integrated validation, error logging, and debugging
+                                support.</li>
+                            <li class="font-normal leading-relaxed">Enabled support for both staging and production with
+                                real-time execution reports aligned to architecture standards.</li>
+                        </ul>
+
+                        <div class="mt-6">
+                            <a href="github.com" target="_blank"
+                                class="inline-flex items-center text-indigo-400 font-semibold hover:underline">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card project-card bg-gray-700 p-8 rounded-2xl shadow-xl border border-gray-600 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
+                        <h4 class="text-2xl font-bold text-white mb-2">Know Your Application (KYA) Dashboard</h4>
+                        <p class="text-md text-gray-300 mb-4 font-medium">Feb 2025 – Mar 2025</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Angular</span>
+                            <span
+                                class="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full">BI
+                                Reporting</span>
+                        </div>
+
+                        <ul class="list-disc list-inside text-gray-300 space-y-3">
+                            <li class="font-normal leading-relaxed">Built a monitoring dashboard to track 30+ services
+                                and application health using analytical metrics and business intelligence reporting.
+                            </li>
+                            <li class="font-normal leading-relaxed">Integrated Excel automation for generating real-time
+                                reports and alerts.</li>
+                            <li class="font-normal leading-relaxed">Enabled version and environment-wise module insights
+                                using custom APIs to assist stakeholders.</li>
+                        </ul>
+
+                        <div class="mt-6">
+                            <a href="#" class="inline-flex items-center text-indigo-400 font-semibold hover:underline">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16">
+            <div class="container mx-auto px-4">
+                <h3 class="text-4xl font-bold text-gray-100 mb-10 section-heading text-center">Technical Skills</h3>
+                <div class="card skills-card bg-gray-700 p-8 rounded-2xl shadow-lg border border-gray-600">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Column 1: Core Skills -->
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"
+                                    class="text-indigo-400 mr-2">
+                                    <path fill="currentColor" d="M12 2L1 12h3v8h16v-8h3L12 2zm-1 11h2v5h-2v-5z" />
+                                </svg>
+                                Languages & Frameworks
+                            </h4>
+                            <div class="flex flex-wrap gap-3 skill-group">
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">SQL</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">Python</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">Java</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">TypeScript</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">Angular</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">Spring Boot</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">RESTful APIs</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">HTML</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">CSS</span>
+                                <span class="skill-item bg-indigo-600 text-white font-semibold">C++</span>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Tools & Concepts -->
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"
+                                    class="text-indigo-400 mr-2">
+                                    <path fill="currentColor"
+                                        d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8a8 8 0 0 1-8 8zM12 6a2 2 0 1 0 2 2a2 2 0 0 0-2-2zm0 10a4 4 0 1 1 4-4a4 4 0 0 1-4 4z" />
+                                </svg>
+                                Tools & Other Skills
+                            </h4>
+                            <div class="flex flex-wrap gap-3 skill-group">
+                                <span class="skill-item bg-gray-600 text-gray-200">Docker</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Git</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">JIRA</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Agile</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Debugging</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">RESTful APIs</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">SQL Developer</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Data Analysis</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">SDLC</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">MySQL</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Microsoft SQL Server</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">JBoss</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Unit Testing</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Version Control</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Architecture</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Troubleshooting</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Communication Skills</span>
+                                <span class="skill-item bg-gray-600 text-gray-200">Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education" class="py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h3 class="text-4xl font-bold text-gray-100 mb-10 section-heading text-center">Education</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Education Card 1 -->
+                    <div class="card education-card bg-gray-700 p-8 rounded-2xl shadow-xl border border-gray-600 ">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-indigo-600 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="text-white">
+                                    <path fill="currentColor" d="M12 3L1 12h3v8h16v-8h3L12 3zm-1 11h2v5h-2v-5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white leading-tight">B.Tech, Computer Science Engineering</h4>
+                                <p class="text-lg text-gray-300">Vellore Institute of Technology, Chennai</p>
+                            </div>
+                        </div>
+                        <div class="text-gray-300 border-t border-gray-600 pt-4 mt-4">
+                            <p class="text-md font-medium">
+                                <span class="text-gray-200">Sept 2021 – July 2025</span> | <span class="text-indigo-400">CGPA: 8.38/10</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Education Card 2 -->
+                    <div class="card education-card bg-gray-700 p-8 rounded-2xl shadow-xl border border-gray-600">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-indigo-600 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="text-white">
+                                    <path fill="currentColor" d="M12 3L1 12h3v8h16v-8h3L12 3zm-1 11h2v5h-2v-5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white leading-tight">B.Tech, Computer Science Engineering</h4>
+                                <p class="text-lg text-gray-300">Vellore Institute of Technology, Chennai</p>
+                            </div>
+                        </div>
+                        <div class="text-gray-300 border-t border-gray-600 pt-4 mt-4">
+                            <p class="text-md font-medium">
+                                <span class="text-gray-200">Sept 2021 – July 2025</span> | <span class="text-indigo-400">CGPA: 8.38/10</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section id="certifications" class="py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h3 class="text-4xl font-bold text-gray-100 mb-10 section-heading text-center">Achievements</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Achievement Card 1: Informatics Olympiad -->
+                    <div class="card bg-gray-700 p-8 rounded-2xl shadow-xl border border-gray-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-600 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="text-white"><path fill="currentColor" d="M17 21h-2v-4h-2v4h-2v-7H9v7H7v-4H5v4H3v-7H1v7a2 2 0 0 0 2 2h4v4h2v-4h2v4h2v-4h2v4h2a2 2 0 0 0 2-2v-7h-2v7zm2-11V7l-2-2h-3V1h-2v4H9v3h3v2l-1 1l-2-2h-3v3h3l-1 1l1 1h2v-2l1-1v-2l2 2l1-1v2l1 1h2v-2l1 1h2v-2l-1-1h-3v-3h3l-1-1v3h-2l-1-1v-2l1-1l-2-2v3h-3l-2-2v-3z"/></svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-white leading-tight">Informatics Olympiad</h4>
+                        </div>
+                        <p class="text-lg text-gray-300 font-medium">International Rank: <span
+                                class="text-indigo-400">AIR 29</span></p>
+                        <p class="text-lg text-gray-300 font-medium">State Rank: <span class="text-indigo-400">4</span>
+                        </p>
+                    </div>
+
+                    <!-- Achievement Card 2: JEE Mains -->
+                    <div class="card bg-gray-700 p-8 rounded-2xl shadow-xl border border-gray-600">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-600 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="text-white"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8zm-.99-14H13c1.1 0 2 .9 2 2H9c0-.55-.45-1-1-1s-1 .45-1 1v2c0 1.1.9 2 2 2h4c1.1 0 2 .9 2 2s-.9 2-2 2h-2v1.5h-2v-1.5H9c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h4c.55 0 1 .45 1 1s-.45 1-1 1h-4c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1h.01c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-white leading-tight">JEE Mains</h4>
+                        </div>
+                        <p class="text-lg text-gray-300 font-medium">Percentile: <span
+                                class="text-indigo-400">97.67</span></p>
+                        <p class="text-lg text-gray-300 font-medium">Rank: <span class="text-indigo-400">23,145</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-4 md:px-8">
+                <h3 class="text-4xl font-bold text-gray-100 mb-10 section-heading text-center">Get in Touch</h3>
+                <div class="card contact-card max-w-4xl mx-auto p-8 rounded-2xl shadow-xl border border-gray-600">
+                    <p class="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+                        I'm always open to new opportunities and collaborations. Feel free to reach out to me through email, phone, or connect with me on social media.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 text-center md:text-left">
+                        <!-- Contact Details Column -->
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-center md:justify-start">
+                                <div class="bg-indigo-600 p-3 rounded-full mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="text-white"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5l-8-5h16zm0 12H4V8l8 5l8-5v10z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400 font-medium">Email Address</p>
+                                    <a href="mailto:akumar06082001@gmail.com" class="text-lg font-semibold text-gray-100 hover:text-indigo-400 transition-colors duration-300">akumar06082001@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center md:justify-start">
+                                <div class="bg-indigo-600 p-3 rounded-full mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="text-white"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400 font-medium">Phone Number</p>
+                                    <a href="tel:+918235025420" class="text-lg font-semibold text-gray-100 hover:text-indigo-400 transition-colors duration-300">+91 8235025420</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media Links Column -->
+                        <div class="md:border-l md:border-gray-600 md:pl-8 text-center md:text-left">
+                            <p class="text-sm font-medium text-gray-400 mb-4">Connect with me on social media</p>
+                            <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-center justify-center md:justify-start gap-4">
+                                <a href="https://linkedin.com/in/ayush-kumar-72a258220" target="_blank" class="flex items-center text-indigo-400 hover:text-indigo-300 text-lg transition-colors duration-300" aria-label="LinkedIn Profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="mr-2"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                                    LinkedIn
+                                </a>
+                                <a href="https://github.com/your-github-profile" target="_blank" class="flex items-center text-indigo-400 hover:text-indigo-300 text-lg transition-colors duration-300" aria-label="GitHub Profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="mr-2"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.09.39-1.98 1.03-2.69c-.1-.25-.45-1.27.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.63-.33 2.47-.33c.84 0 1.68.11 2.47.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.37.2 2.39.1 2.64c.64.71 1.03 1.6 1.03 2.69c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85v2.75c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 text-white text-center py-8 mt-12">
+        <p>&copy; 2025 Ayush Kumar. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script>
+        // Register GSAP plugins
+         gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
+
+        // --- Header Sticky Effect ---
+        const header = document.getElementById('main-header');
+        ScrollTrigger.create({
+            trigger: "body",
+            start: "top top",
+            end: "bottom top",
+            onUpdate: (self) => {
+                if (self.direction === 1 && self.progress > 0.05) { // Scrolling down past 5% of the page
+                    header.classList.add('sticky-header');
+                } else if (self.direction === -1 && self.progress <= 0.05) { // Scrolling up to the top
+                    header.classList.remove('sticky-header');
+                }
+            }
+        });
+
+        // --- Hero Section Animation ---
+        const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        heroTimeline
+            .from(".logo-text", { duration: 0.8, y: -20, opacity: 0, delay: 0.2 })
+            .from(".nav-link", { duration: 0.6, y: -20, opacity: 0, stagger: 0.1 }, "<0.1")
+            .to(".hero-title", { duration: 1.5, text: "Ayush Kumar" }, "<0.2")
+            .from(".hero-subtitle", { duration: 0.8, y: 20, opacity: 0 }, "<0.5")
+            .from(".hero-description", { duration: 1, y: 30, opacity: 0 }, "<0.3")
+            .from(".hero-buttons", { duration: 0.8, opacity: 0, scale: 0.8, ease: "back.out(1.7)" }, "<0.3");
+
+        // Add image animation if it exists and is visible (only on large screens)
+        if (window.innerWidth >= 1024) {
+            heroTimeline.from(".hero-image-container", { duration: 1, opacity: 0, scale: 0.9, ease: "power3.out" }, "<0.2");
+        }
+
+
+        // --- Section Heading Animation on Scroll (with underline reveal) ---
+        gsap.utils.toArray(".section-heading").forEach(heading => {
+            gsap.from(heading, {
+                opacity: 0,
+                x: -100,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: heading,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            });
+            // Animate the custom CSS variable for the underline
+            gsap.to(heading, {
+                '--underline-width': '60%',
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: heading,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // --- Card Animation on Scroll (subtle parallax-like effect with stagger) ---
+        // Animate all cards with a stagger effect when their section comes into view
+        function animateCardsWithStagger(selector) {
+            gsap.from(selector, {
+                opacity: 0,
+                y: 50, // Smaller y for a smoother lift
+                scale: 0.95, // Slight scale up
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.15, // Stagger effect for cards in a group
+                scrollTrigger: {
+                    trigger: selector,
+                    start: "top 85%", // Adjust start point
+                    toggleActions: "play none none none"
+                }
+            });
+        }
+
+        animateCardsWithStagger(".experience-card");
+        animateCardsWithStagger(".project-card");
+        animateCardsWithStagger(".education-card");
+        animateCardsWithStagger(".certifications-card");
+        animateCardsWithStagger(".contact-card"); // Also animate the contact card
+
+
+        // --- Skill Items Fade-in with Stagger ---
+        gsap.utils.toArray(".skill-group").forEach(group => {
+            gsap.from(group.querySelectorAll(".skill-item"), {
+                opacity: 0,
+                y: 30,
+                scale: 0.8,
+                stagger: 0.08, // Faster stagger
+                duration: 0.6,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: group,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // --- Button Hover Animations ---
+        gsap.utils.toArray(".button-animate").forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                gsap.to(button, { scale: 1.05, duration: 0.2, ease: "power1.out" });
+            });
+            button.addEventListener('mouseleave', () => {
+                gsap.to(button, { scale: 1, duration: 0.2, ease: "power1.out" });
+            });
+        });
+
+        // --- Smooth scrolling for navigation links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                gsap.to(window, { duration: 1, scrollTo: targetId, ease: "power2.inOut" });
+            });
+        });
+    </script>
+</body>
+
+</html>
