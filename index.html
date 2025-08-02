@@ -147,32 +147,28 @@
 
 <body class="antialiased">
 
-    <header class="bg-gray-900 shadow-lg py-4 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
-        id="main-header">
-        <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center">
-            <h1 class="text-3xl font-extrabold text-white logo-text">Ayush Kumar</h1>
-            <ul class="flex space-x-6 sm:space-x-8">
-                <li><a href="#summary"
-                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Summary</a>
-                </li>
-                <li><a href="#experience"
-                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Experience</a>
-                </li>
-                <li><a href="#projects"
-                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Projects</a>
-                </li>
-                <li><a href="#skills"
-                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Skills</a>
-                </li>
-                <li><a href="#education"
-                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Education</a>
-                </li>
-                <li><a href="#contact"
-                        class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Contact</a>
-                </li>
+  <header class="bg-gray-900 shadow-lg py-4 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out" id="main-header">
+    <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center">
+        <h1 class="text-3xl font-extrabold text-white logo-text">Ayush Kumar</h1>
+        
+        <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        <div id="nav-menu" class="hidden lg:flex lg:items-center w-full lg:w-auto mt-4 lg:mt-0 absolute lg:relative top-full left-0 bg-gray-900 lg:bg-transparent shadow-lg lg:shadow-none transition-all duration-300 ease-in-out">
+            <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 p-6 lg:p-0">
+                <li><a href="#summary" class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Summary</a></li>
+                <li><a href="#experience" class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Experience</a></li>
+                <li><a href="#projects" class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Projects</a></li>
+                <li><a href="#skills" class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Skills</a></li>
+                <li><a href="#education" class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Education</a></li>
+                <li><a href="#contact" class="nav-link text-gray-300 hover:text-indigo-400 font-semibold text-lg transition-colors duration-300">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <main class="container mx-auto px-4 py-8 mt-20">
         <section id="summary" class="bg-gray-800 py-16 sm:py-24 text-center relative overflow-hidden">
