@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush Kumar - Backend Software Engineer</title>
+    <title>Ayush Kumar | Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Ayush Kumar</div>
+            <a href="#home" class="nav-logo">&lt;AK /&gt;</a>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -19,48 +20,73 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <section id="home" class="hero">
+        <canvas id="particles"></canvas>
         <div class="hero-content">
-            <h1>Ayush Kumar</h1>
-            <h2>Backend Software Engineer</h2>
-            <p>Specializing in Python, SQL, REST APIs, and cloud-native application development</p>
+            <p class="hero-greeting">Hi, I'm</p>
+            <h1 class="glitch" data-text="Ayush Kumar">Ayush Kumar</h1>
+            <h2><span class="typed-text"></span><span class="cursor">|</span></h2>
+            <p class="hero-desc">Building performant, user-centric web experiences and end-to-end software systems</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn primary">Get In Touch</a>
-                <a href="#projects" class="btn secondary">View Projects</a>
+                <a href="#contact" class="btn primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+                <a href="#projects" class="btn secondary"><i class="fas fa-code"></i> View Projects</a>
             </div>
             <div class="social-links">
-                <a href="mailto:akumar06082001@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/ayush-kumar-72a258220" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/powercoder06" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:akumar06082001@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ayush-kumar-72a258220/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/powercoder06" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://leetcode.com/u/powercoder06/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
             </div>
+            <a href="#about" class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2 class="section-title"><span class="title-number">01.</span> About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Backend-focused Software Engineer with strong experience in Python, SQL, REST APIs, and cloud-native application development. I have a proven ability to design scalable backend systems, automate workflows, and debug production issues.</p>
-                    <p>Currently working as an Associate Software Engineer at Alter Domus, developing enterprise-grade financial platforms. Previously interned at DBS Tech India, where I improved release turnaround time by 40% through effective debugging and production support.</p>
-                    <p>I'm passionate about AI-powered systems, backend scalability, and cloud infrastructure, with hands-on experience in Docker, microservices, and distributed systems.</p>
+                    <p>Software Engineer with experience in developing scalable web applications using <strong>Angular, TypeScript, Java (Spring Boot), and REST APIs</strong>. Strong background in building reusable UI components, API integration, debugging, and performance optimization for enterprise applications.</p>
+                    <p>Hands-on experience with <strong>Linux environments, Docker, SQL optimization, and Agile workflows</strong>. Currently at Alter Domus building enterprise backend services, previously at DBS Tech India where I reduced issue resolution time by 40%.</p>
                 </div>
-                <div class="achievements">
-                    <h3>Key Achievements</h3>
-                    <ul>
-                        <li><i class="fas fa-trophy"></i> International Informatics Olympiad - AIR 29 (State Rank 4)</li>
-                        <li><i class="fas fa-graduation-cap"></i> JEE Mains - 97.67 Percentile</li>
-                        <li><i class="fas fa-certificate"></i> 10+ Advanced Programming Certifications</li>
-                        <li><i class="fas fa-code"></i> LeetCode Rating: 1659</li>
-                    </ul>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="1">1+</div>
+                        <div class="stat-label">Year Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="40">40%</div>
+                        <div class="stat-label">Faster Debugging</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="8">8.38</div>
+                        <div class="stat-label">CGPA / 10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="achievements-bar">
+                <div class="achievement-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>Informatics Olympiad — AIR 29 (State Rank 4)</span>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>JEE Mains — 97.67 Percentile</span>
                 </div>
             </div>
         </div>
@@ -68,30 +94,43 @@
 
     <section id="experience" class="experience">
         <div class="container">
-            <h2>Experience</h2>
+            <h2 class="section-title"><span class="title-number">02.</span> Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">Aug 2025 - Present</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Associate Software Engineer</h3>
-                        <h4>Alter Domus, Hyderabad</h4>
+                        <div class="exp-header">
+                            <div>
+                                <h3>Associate Software Engineer</h3>
+                                <h4>Alter Domus, Hyderabad</h4>
+                            </div>
+                            <span class="exp-date">Aug 2025 — Present</span>
+                        </div>
                         <ul>
-                            <li>Developing and maintaining backend services for financial platforms using enterprise-grade architectures</li>
-                            <li>Working with .NET, C#, SQL, and cloud-based deployments to build reliable and scalable systems</li>
-                            <li>Contributing to debugging, performance optimization, and production issue resolution</li>
+                            <li>Developing enterprise backend services with focus on REST APIs, scalable architecture, and database optimization</li>
+                            <li>Writing and optimizing complex SQL queries, improving performance, reliability, and data consistency</li>
+                            <li>Debugging production issues and contributing to performance tuning and system stability</li>
+                            <li>Collaborating across teams in Agile environments to deliver end-to-end features and enhancements</li>
+                            <li>Participating in code reviews, testing, issue triaging, and technical documentation</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Jun 2024 - Jun 2025</div>
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Software Development Intern</h3>
-                        <h4>DBS Tech India, Hyderabad</h4>
+                        <div class="exp-header">
+                            <div>
+                                <h3>Software Development Intern</h3>
+                                <h4>DBS Tech India, Hyderabad</h4>
+                            </div>
+                            <span class="exp-date">Jun 2024 — Jun 2025</span>
+                        </div>
                         <ul>
-                            <li>Built and maintained enterprise web applications with Angular frontends and backend REST APIs</li>
-                            <li>Designed reusable components and service integrations aligned with microservices architecture</li>
-                            <li>Improved release turnaround time by 40% through root cause analysis and debugging</li>
-                            <li>Worked with Git, JIRA, CI/CD workflows, and Agile sprint planning</li>
+                            <li>Built enterprise web applications using Angular, TypeScript, HTML, CSS, and REST APIs</li>
+                            <li>Developed reusable and modular UI components, improving development efficiency and maintainability</li>
+                            <li>Integrated frontend applications with backend services, ensuring efficient API communication and data flow</li>
+                            <li>Performed debugging and root cause analysis, reducing issue resolution time by 40%</li>
+                            <li>Worked in Agile teams using Git, JIRA, code reviews, and collaborative development practices</li>
                         </ul>
                     </div>
                 </div>
@@ -101,38 +140,41 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Key Projects</h2>
+            <h2 class="section-title"><span class="title-number">03.</span> Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-brain"></i></div>
                     <div class="project-header">
-                        <h3>SQL Executor & Automation Tool</h3>
-                        <span class="project-date">May 2025 - Jun 2025</span>
+                        <h3>JIRA NLP to JQL Web App</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/powercoder06" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
-                    <p>Designed a Python (Flask) backend with Angular frontend to automate execution and validation of 100+ SQL scripts with structured logging and error handling.</p>
+                    <span class="project-date">Current</span>
+                    <p>Full-stack application converting natural language queries into JQL using NLP techniques. Spring Boot backend with structured REST APIs, JWT-based auth, and SQLite for query history.</p>
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>Angular</span>
-                        <span>SQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/powercoder06" target="_blank"><i class="fab fa-github"></i></a>
+                        <span>Spring Boot</span>
+                        <span>REST APIs</span>
+                        <span>JWT</span>
+                        <span>SQLite</span>
+                        <span>NLP</span>
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
                     <div class="project-header">
-                        <h3>Know Your Application (KYA) Dashboard</h3>
-                        <span class="project-date">Feb 2025 - Mar 2025</span>
+                        <h3>React Native Apps</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/powercoder06" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
-                    <p>Built a centralized monitoring dashboard tracking 30+ microservices using API-driven health checks with automated reporting and SLA monitoring.</p>
+                    <span class="project-date">Meal Tracker & Daily Logger</span>
+                    <p>Cross-platform mobile apps with modular UI components, CRUD functionality, local storage, and optimized state management for improved responsiveness.</p>
                     <div class="project-tech">
-                        <span>Microservices</span>
-                        <span>REST APIs</span>
-                        <span>Monitoring</span>
-                        <span>Excel Integration</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/powercoder06" target="_blank"><i class="fab fa-github"></i></a>
+                        <span>React Native</span>
+                        <span>State Management</span>
+                        <span>Local Storage</span>
+                        <span>CRUD</span>
                     </div>
                 </div>
             </div>
@@ -141,74 +183,79 @@
 
     <section id="skills" class="skills">
         <div class="container">
-            <h2>Technical Skills</h2>
+            <h2 class="section-title"><span class="title-number">04.</span> Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
+                    <div class="skill-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Frontend</h3>
                     <div class="skill-tags">
-                        <span>Python</span>
-                        <span>Java</span>
-                        <span>SQL</span>
+                        <span>Angular</span>
                         <span>TypeScript</span>
-                        <span>C++</span>
-                        <span>C#</span>
+                        <span>React Native</span>
+                        <span>RxJS</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Backend & APIs</h3>
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend</h3>
                     <div class="skill-tags">
-                        <span>Flask</span>
+                        <span>Java</span>
                         <span>Spring Boot</span>
                         <span>REST APIs</span>
                         <span>Microservices</span>
+                        <span>JPA/Hibernate</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-tags">
-                        <span>Docker</span>
-                        <span>Git</span>
-                        <span>CI/CD</span>
-                        <span>AWS</span>
-                        <span>Kubernetes</span>
-                    </div>
-                </div>
-                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
                     <h3>Databases</h3>
                     <div class="skill-tags">
                         <span>MySQL</span>
-                        <span>SQL Server</span>
+                        <span>PostgreSQL</span>
+                        <span>SQLite</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Concepts</h3>
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <h3>DevOps & Tools</h3>
                     <div class="skill-tags">
-                        <span>Backend Scalability</span>
-                        <span>Distributed Systems</span>
-                        <span>Observability</span>
-                        <span>Clean Code</span>
-                        <span>SOLID</span>
-                        <span>Agile</span>
+                        <span>Docker</span>
+                        <span>Git</span>
+                        <span>JIRA</span>
+                        <span>Bitbucket</span>
+                        <span>Linux</span>
+                        <span>Shell Scripting</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span>Java</span>
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>TypeScript</span>
+                        <span>C++</span>
+                        <span>C#</span>
                     </div>
                 </div>
             </div>
             <div class="coding-profiles">
                 <h3>Coding Profiles</h3>
                 <div class="profile-links">
-                    <a href="#" class="profile-card">
+                    <a href="https://leetcode.com/u/powercoder06/" target="_blank" class="profile-card">
                         <i class="fas fa-code"></i>
                         <span>LeetCode</span>
-                        <strong>1659</strong>
                     </a>
-                    <a href="#" class="profile-card">
+                    <a href="https://codeforces.com/profile/bhaiyagaming2021" target="_blank" class="profile-card">
                         <i class="fas fa-trophy"></i>
                         <span>Codeforces</span>
-                        <strong>1330</strong>
                     </a>
-                    <a href="#" class="profile-card">
-                        <i class="fas fa-star"></i>
-                        <span>Coding Ninjas</span>
-                        <strong>1800+</strong>
+                    <a href="https://github.com/powercoder06" target="_blank" class="profile-card">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
                     </a>
                 </div>
             </div>
@@ -217,21 +264,29 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2 class="section-title"><span class="title-number">05.</span> Get In Touch</h2>
+            <p class="contact-subtitle">I'm currently open to new opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>akumar06082001@gmail.com</p>
+                            <a href="mailto:akumar06082001@gmail.com">akumar06082001@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 8235025420</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-graduation-cap"></i>
                         <div>
                             <h3>Education</h3>
-                            <p>B.Tech CSE, VIT Chennai<br>CGPA: 8.38/10 (2021-2025)</p>
+                            <p>B.Tech CSE, VIT Chennai<br>CGPA: 8.38/10 (2021–2025)</p>
                         </div>
                     </div>
                 </div>
@@ -240,7 +295,7 @@
                         <input type="text" placeholder="Your Name" required>
                         <input type="email" placeholder="Your Email" required>
                         <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="btn primary">Send Message</button>
+                        <button type="submit" class="btn primary"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
@@ -249,14 +304,16 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Ayush Kumar. All rights reserved.</p>
+            <p>Designed & Built by Ayush Kumar &copy; 2025</p>
             <div class="footer-links">
-                <a href="https://linkedin.com/in/ayush-kumar-72a258220" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/ayush-kumar-72a258220/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/powercoder06" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="mailto:akumar06082001@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
+
+    <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
